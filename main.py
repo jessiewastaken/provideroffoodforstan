@@ -1,4 +1,9 @@
 import discord
+from dotenv import load_dotenv
+import os
+
+# Credentials
+load_dotenv('.env')
 
 client = discord.Client()
 
@@ -33,4 +38,4 @@ async def on_message(message):
     if message.content.startswith('$fuckyou'):
         await message.channel.send("https://cdn.discordapp.com/attachments/756894822643793944/889609333380382780/video0_73.mp4")
 
-client.run('ODg5NjA2MDA5MjUxODI3NzUy.YUjsKA.d-T96i37TxS-eA8Dp830l2m4Vus')
+client.run(os.getenv('TOKEN'))
